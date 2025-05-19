@@ -66,10 +66,20 @@ else:
     st.write("Upload an appropriate Image")
     st.stop()
 
-effects = ["GrayScale","Blur","Sharpening","Histogram Equization","Edges","Contours","Original"]
+effects = ["GrayScale", "Blur", "Sharpening", "Histogram Equization", "Edges", "Contours", "Original"]
+selected_effects = []
 
-selected_effects = st.multiselect("Select Effects",effects,default="Original")
-st.markdown("<br><br>",unsafe_allow_html=True)
+st.write("Select Effects:")
+
+num_columns = 5
+
+for row_start in range(0, len(effects), num_columns):
+    cols = st.columns(num_columns)
+    
+    for i, effect in enumerate(effects[row_start:row_start + num_columns]):
+        with cols[i]:
+            if st.checkbox(effect, value=(effect == "Original")):
+                selected_effects.append(effect)
 
 if selected_effects:
     tabs = st.tabs([i for i in selected_effects])
