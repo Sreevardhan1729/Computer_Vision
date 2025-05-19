@@ -32,7 +32,7 @@ To run the project locally, follow these steps:
 ### Repository Structure
 Your project files are located in the **Phase1** directory within this repository:
 ```sh
-📂 Your-Repository
+📂 Computer_Vision
  ├── 📂 Phase1
  │    ├── app.py
  │    ├── requirements.txt
